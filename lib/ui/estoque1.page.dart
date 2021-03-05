@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class estoque1 extends StatefulWidget {
   @override
@@ -26,6 +29,7 @@ class _estoque1State extends State<estoque1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(-31, 0, 152, 218),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text('ESTOQUE'),
@@ -40,11 +44,9 @@ class _estoque1State extends State<estoque1> {
           Flexible(
               flex: 1,
               child: Container(
-                color: Colors.green,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // IconButton(icon: Icon(Icons.data)),
                     Container(
                       width: double.infinity,
                       margin: EdgeInsets.fromLTRB(20, 5, 20, 5),

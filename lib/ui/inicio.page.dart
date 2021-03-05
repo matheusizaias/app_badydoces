@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:app_badydoces/ui/icones__novos_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:app_badydoces/ui/estoque1.page.dart';
 
@@ -7,39 +10,24 @@ class inicioPage extends StatefulWidget {
 }
 
 class _inicioPageState extends State<inicioPage> {
-  final txtPesoCtrl = TextEditingController();
-
-  final txtAlturaCtrl = TextEditingController();
-
-  double imc = 0;
   String image = "assets/images/LOGO.png";
-
-  void calculaIMC() {
-    double peso = double.parse(txtPesoCtrl.text);
-    double altura = double.parse(txtAlturaCtrl.text);
-    double imc = peso / (altura * altura);
-    print(imc);
-
-    setState(() {
-      this.imc = imc;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(-31, 0, 152, 218),
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.black,
-        shadowColor: Colors.purple,
+        shadowColor: Colors.red,
+        title: Text('INICIO'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 20,
+            height: 30,
           ),
           Flexible(
             flex: 1,
@@ -54,60 +42,107 @@ class _inicioPageState extends State<inicioPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      width: double.infinity,
-                      child: RaisedButton(
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "NOVA VENDA",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 65,
+                    FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.fromLTRB(30, 10, 0, 10),
+                      textColor: Colors.black,
+                      height: 80.0,
+                      color: Colors.white,
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.add_box_outlined,
+                              size: 80,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
+                          Text(
+                            '   Nova Venda',
+                            style: TextStyle(
+                              fontSize: 50,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: double.infinity,
-                      child: RaisedButton(
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "ESTOQUE",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 65,
+                    FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.fromLTRB(30, 10, 0, 10),
+                      textColor: Colors.black,
+                      height: 80.0,
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => estoque1()),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.store_mall_directory_outlined,
+                              size: 80,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => estoque1()),
-                          );
-                        },
+                          Text(
+                            '      Estoque',
+                            style: TextStyle(
+                              fontSize: 50,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      width: double.infinity,
-                      child: RaisedButton(
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "CTRL VENDAS",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 65,
+                    FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      padding: EdgeInsets.fromLTRB(30, 10, 0, 10),
+                      textColor: Colors.black,
+                      height: 80.0,
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => estoque1()),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.monetization_on_outlined,
+                              size: 80,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        onPressed: () {},
+                          Text(
+                            '   Ctrl Vendas',
+                            style: TextStyle(
+                              fontSize: 50,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
